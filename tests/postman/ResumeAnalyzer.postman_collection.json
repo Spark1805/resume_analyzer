@@ -15,7 +15,7 @@
           "raw": "{\"username\":\"test\",\"password\":\"123\"}"
         },
         "url": {
-          "raw": "http://localhost:8080/api/auth/login"
+          "raw": "http://localhost:6996/api/auth/login"
         }
       }
     },
@@ -39,7 +39,7 @@
           ]
         },
         "url": {
-          "raw": "http://localhost:8080/api/resume/analyze"
+          "raw": "http://localhost:6996/api/resume/analyze"
         }
       }
     }
