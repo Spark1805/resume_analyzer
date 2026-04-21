@@ -67,7 +67,7 @@ The application uses environment variables for sensitive data.
 Update `application.properties`:
 
 ```
-server.port=6969
+server.port=6996
 spring.data.mongodb.uri=${MONGODB_URI}
 
 jwt.secret=${JWT_SECRET}
@@ -118,7 +118,7 @@ mvn spring-boot:run
 4. Access the API:
 
 ```
-http://localhost:6969
+http://localhost:6996
 ```
 
 ---
@@ -176,7 +176,7 @@ docker build -t resume-analyzer .
 ### Run Container
 
 ```
-docker run -p 6969:6969 \
+docker run -p 6996:6996 \
 -e MONGODB_URI=mongodb://host.docker.internal:27017/resumeDB \
 -e JWT_SECRET=your_secret \
 -e OPENAI_API_KEY=your_key \
