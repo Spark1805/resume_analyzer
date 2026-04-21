@@ -5,11 +5,11 @@
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
+
     {
-      "name": "Login",
+      "name": "Login - Valid User",
       "request": {
         "method": "POST",
-        "header": [],
         "body": {
           "mode": "raw",
           "raw": "{\"username\":\"test\",\"password\":\"123\"}"
@@ -20,22 +20,226 @@
       }
     },
     {
-      "name": "Analyze Resume",
+      "name": "Login - Invalid Password",
       "request": {
         "method": "POST",
-        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\":\"test\",\"password\":\"wrong\"}"
+        },
+        "url": {
+          "raw": "http://localhost:6996/api/auth/login"
+        }
+      }
+    },
+    {
+      "name": "Login - Invalid Username",
+      "request": {
+        "method": "POST",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\":\"wrong\",\"password\":\"123\"}"
+        },
+        "url": {
+          "raw": "http://localhost:6996/api/auth/login"
+        }
+      }
+    },
+    {
+      "name": "Login - Empty Fields",
+      "request": {
+        "method": "POST",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\":\"\",\"password\":\"\"}"
+        },
+        "url": {
+          "raw": "http://localhost:6996/api/auth/login"
+        }
+      }
+    },
+    {
+      "name": "Login - SQL Injection Test",
+      "request": {
+        "method": "POST",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\":\"admin' OR '1'='1\",\"password\":\"123\"}"
+        },
+        "url": {
+          "raw": "http://localhost:6996/api/auth/login"
+        }
+      }
+    },
+
+    {
+      "name": "Analyze Resume - Java Developer",
+      "request": {
+        "method": "POST",
         "body": {
           "mode": "formdata",
           "formdata": [
-            {
-              "key": "file",
-              "type": "file",
-              "src": ""
-            },
-            {
-              "key": "jd",
-              "value": "Java Developer"
-            }
+            { "key": "file", "type": "file", "src": "" },
+            { "key": "jd", "value": "Java Developer" }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:6996/api/resume/analyze"
+        }
+      }
+    },
+    {
+      "name": "Analyze Resume - Python Developer",
+      "request": {
+        "method": "POST",
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "file", "type": "file", "src": "" },
+            { "key": "jd", "value": "Python Developer" }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:6996/api/resume/analyze"
+        }
+      }
+    },
+    {
+      "name": "Analyze Resume - Data Scientist",
+      "request": {
+        "method": "POST",
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "file", "type": "file", "src": "" },
+            { "key": "jd", "value": "Data Scientist" }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:6996/api/resume/analyze"
+        }
+      }
+    },
+    {
+      "name": "Analyze Resume - Frontend Developer",
+      "request": {
+        "method": "POST",
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "file", "type": "file", "src": "" },
+            { "key": "jd", "value": "Frontend Developer" }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:6996/api/resume/analyze"
+        }
+      }
+    },
+    {
+      "name": "Analyze Resume - Backend Developer",
+      "request": {
+        "method": "POST",
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "file", "type": "file", "src": "" },
+            { "key": "jd", "value": "Backend Developer" }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:6996/api/resume/analyze"
+        }
+      }
+    },
+    {
+      "name": "Analyze Resume - Full Stack Developer",
+      "request": {
+        "method": "POST",
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "file", "type": "file", "src": "" },
+            { "key": "jd", "value": "Full Stack Developer" }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:6996/api/resume/analyze"
+        }
+      }
+    },
+    {
+      "name": "Analyze Resume - DevOps Engineer",
+      "request": {
+        "method": "POST",
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "file", "type": "file", "src": "" },
+            { "key": "jd", "value": "DevOps Engineer" }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:6996/api/resume/analyze"
+        }
+      }
+    },
+    {
+      "name": "Analyze Resume - AI Engineer",
+      "request": {
+        "method": "POST",
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "file", "type": "file", "src": "" },
+            { "key": "jd", "value": "AI Engineer" }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:6996/api/resume/analyze"
+        }
+      }
+    },
+    {
+      "name": "Analyze Resume - Empty JD",
+      "request": {
+        "method": "POST",
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "file", "type": "file", "src": "" },
+            { "key": "jd", "value": "" }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:6996/api/resume/analyze"
+        }
+      }
+    },
+    {
+      "name": "Analyze Resume - No File",
+      "request": {
+        "method": "POST",
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "jd", "value": "Java Developer" }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:6996/api/resume/analyze"
+        }
+      }
+    },
+    {
+      "name": "Analyze Resume - Large JD",
+      "request": {
+        "method": "POST",
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "file", "type": "file", "src": "" },
+            { "key": "jd", "value": "Senior Java Developer with Spring Boot, Microservices, Kubernetes, Docker, CI/CD, AWS experience" }
           ]
         },
         "url": {
@@ -43,5 +247,6 @@
         }
       }
     }
+
   ]
 }
